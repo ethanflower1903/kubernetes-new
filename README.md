@@ -145,3 +145,12 @@ When using declarative object configuration, a user operates on object configura
 
 Note: Declarative object configuration retains changes made by other writers, even if the changes are not merged back to the object configuration file. This is possible by using the patch API operation to write only observed differences, instead of using the replace API operation to replace the entire object configuration.
 
+Examples
+Process all object configuration files in the configs directory, and create or patch the live objects. You can first diff to see what changes are going to be made, and then apply:
+
+kubectl diff -f configs/
+kubectl apply -f configs/
+Recursively process directories:
+
+kubectl diff -R -f configs/
+kubectl apply -R -f configs/

@@ -154,3 +154,14 @@ Recursively process directories:
 
 kubectl diff -R -f configs/
 kubectl apply -R -f configs/
+
+Trade-offs
+Advantages compared to imperative object configuration:
+
+Changes made directly to live objects are retained, even if they are not merged back into the configuration files.
+Declarative object configuration has better support for operating on directories and automatically detecting operation types (create, patch, delete) per-object.
+Disadvantages compared to imperative object configuration:
+
+Declarative object configuration is harder to debug and understand results when they are unexpected.
+Partial updates using diffs create complex merge and patch operations.
+

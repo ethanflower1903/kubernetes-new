@@ -171,4 +171,29 @@ Before you begin
 Install kubectl.
 
 You need to have a Kubernetes cluster, and the kubectl command-line tool must be configured to communicate with your cluster. It is recommended to run this tutorial on a cluster with at least two nodes that are not acting as control plane hosts. If you do not already have a cluster, you can create one by using minikube or you can use one of these Kubernetes playgrounds:
+Trade-offs
+The kubectl tool supports three kinds of object management:
+
+Imperative commands
+Imperative object configuration
+Declarative object configuration
+See Kubernetes Object Management for a discussion of the advantages and disadvantage of each kind of object management.
+
+How to create objects
+The kubectl tool supports verb-driven commands for creating some of the most common object types. The commands are named to be recognizable to users unfamiliar with the Kubernetes object types.
+
+run: Create a new Pod to run a Container.
+expose: Create a new Service object to load balance traffic across Pods.
+autoscale: Create a new Autoscaler object to automatically horizontally scale a controller, such as a Deployment.
+The kubectl tool also supports creation commands driven by object type. These commands support more object types and are more explicit about their intent, but require users to know the type of objects they intend to create.
+
+create <objecttype> [<subtype>] <instancename>
+Some objects types have subtypes that you can specify in the create command. For example, the Service object has several subtypes including ClusterIP, LoadBalancer, and NodePort. Here's an example that creates a Service with subtype NodePort:
+
+kubectl create service nodeport <myservicename>
+In the preceding example, the create service nodeport command is called a subcommand of the create service command.
+
+You can use the -h flag to find the arguments and flags supported by a subcommand:
+
+kubectl create service nodeport -h
 

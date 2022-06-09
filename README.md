@@ -211,3 +211,15 @@ The kubectl tool supports these additional ways to update a live object directly
 
 edit: Directly edit the raw configuration of a live object by opening its configuration in an editor.
 patch: Directly modify specific fields of a live object by using a patch string. For more details on patch strings, see the patch section in API Conventions.
+How to delete objects
+You can use the delete command to delete an object from a cluster:
+
+delete <type>/<name>
+Note: You can use kubectl delete for both imperative commands and imperative object configuration. The difference is in the arguments passed to the command. To use kubectl delete as an imperative command, pass the object to be deleted as an argument. Here's an example that passes a Deployment object named nginx:
+kubectl delete deployment/nginx
+How to view an object
+There are several commands for printing information about an object:
+
+get: Prints basic information about matching objects. Use get -h to see a list of options.
+describe: Prints aggregated detailed information about matching objects.
+logs: Prints the stdout and stderr for a container running in a Pod.

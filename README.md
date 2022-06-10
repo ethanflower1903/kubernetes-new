@@ -223,3 +223,10 @@ There are several commands for printing information about an object:
 get: Prints basic information about matching objects. Use get -h to see a list of options.
 describe: Prints aggregated detailed information about matching objects.
 logs: Prints the stdout and stderr for a container running in a Pod.
+Using set commands to modify objects before creation
+There are some object fields that don't have a flag you can use in a create command. In some of those cases, you can use a combination of set and create to specify a value for the field before object creation. This is done by piping the output of the create command to the set command, and then back to the create command. Here's an example:
+
+kubectl create service clusterip my-svc --clusterip="None" -o yaml --dry-run=client | kubectl set selector --local -f - 'environment=qa' -o yaml | kubectl create -f -
+The kubectl create service -o yaml --dry-run=client command creates the configuration for the Service, but prints it to stdout as YAML instead of sending it to the Kubernetes API server.
+The kubectl set selector --local -f - -o yaml command reads the configuration from stdin, and writes the updated configuration to stdout as YAML.
+The kubectl create -f - command creates the object using the configuration provided via stdin.

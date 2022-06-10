@@ -237,3 +237,4 @@ kubectl create service clusterip my-svc --clusterip="None" -o yaml --dry-run=cli
 kubectl create --edit -f /tmp/srv.yaml
 The kubectl create service command creates the configuration for the Service and saves it to /tmp/srv.yaml.
 The kubectl create --edit command opens the configuration file for editing before it creates the object.
+# important

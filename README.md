@@ -237,4 +237,83 @@ kubectl create service clusterip my-svc --clusterip="None" -o yaml --dry-run=cli
 kubectl create --edit -f /tmp/srv.yaml
 The kubectl create service command creates the configuration for the Service and saves it to /tmp/srv.yaml.
 The kubectl create --edit command opens the configuration file for editing before it creates the object.
-# important
+
+  Assign Memory Resources to Containers and Pods
+This page shows how to assign a memory request and a memory limit to a Container. A Container is guaranteed to have as much memory as it requests, but is not allowed to use more memory than its limit.
+
+Before you begin
+You need to have a Kubernetes cluster, and the kubectl command-line tool must be configured to communicate with your cluster. It is recommended to run this tutorial on a cluster with at least two nodes that are not acting as control plane hosts. If you do not already have a cluster, you can create one by using minikube or you can use one of these Kubernetes playgrounds:
+
+Katacoda
+Play with Kubernetes
+To check the version, enter kubectl version.
+Each node in your cluster must have at least 300 MiB of memory.
+
+A few of the steps on this page require you to run the metrics-server service in your cluster. If you have the metrics-server running, you can skip those steps.
+
+If you are running Minikube, run the following command to enable the metrics-server:
+
+minikube addons enable metrics-server
+To see whether the metrics-server is running, or another provider of the resource metrics API (metrics.k8s.io), run the following command:
+
+kubectl get apiservices
+If the resource metrics API is available, the output includes a reference to metrics.k8s.io.
+
+NAME
+v1beta1.metrics.k8s.io
+Create a namespace
+Create a namespace so that the resources you create in this exercise are isolated from the rest of your cluster.
+
+kubectl create namespace mem-example
+Specify a memory request and a memory limit
+To specify a memory request for a Container, include the resources:requests field in the Container's resource manifest. To specify a memory limit, include resources:limits.
+
+In this exercise, you create a Pod that has one Container. The Container has a memory request of 100 MiB and a memory limit of 200 MiB. Here's the configuration file for the Pod:
+
+pods/resource/memory-request-limit.yaml Copy pods/resource/memory-request-limit.yaml to clipboard
+apiVersion: v1
+kind: Pod
+metadata:
+  name: memory-demo
+  namespace: mem-example
+spec:
+  containers:
+  - name: memory-demo-ctr
+    image: polinux/stress
+    resources:
+      requests:
+        memory: "100Mi"
+      limits:
+        memory: "200Mi"
+    command: ["stress"]
+    args: ["--vm", "1", "--vm-bytes", "150M", "--vm-hang", "1"]
+The args section in the configuration file provides arguments for the Container when it starts. The "--vm-bytes", "150M" arguments tell the Container to attempt to allocate 150 MiB of memory.
+
+Create the Pod:
+
+kubectl apply -f https://k8s.io/examples/pods/resource/memory-request-limit.yaml --namespace=mem-example
+Verify that the Pod Container is running:
+
+kubectl get pod memory-demo --namespace=mem-example
+View detailed information about the Pod:
+
+kubectl get pod memory-demo --output=yaml --namespace=mem-example
+The output shows that the one Container in the Pod has a memory request of 100 MiB and a memory limit of 200 MiB.
+
+...
+resources:
+  requests:
+    memory: 100Mi
+  limits:
+    memory: 200Mi
+...
+Run kubectl top to fetch the metrics for the pod:
+
+kubectl top pod memory-demo --namespace=mem-example
+The output shows that the Pod is using about 162,900,000 bytes of memory, which is about 150 MiB. This is greater than the Pod's 100 MiB request, but within the Pod's 200 MiB limit.
+
+NAME                        CPU(cores)   MEMORY(bytes)
+memory-demo                 <something>  162856960
+Delete your Pod:
+
+kubectl delete pod memory-demo --namespace=mem-example

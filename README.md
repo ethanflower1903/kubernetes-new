@@ -317,3 +317,4 @@ memory-demo                 <something>  162856960
 Delete your Pod:
 
 kubectl delete pod memory-demo --namespace=mem-example
+#import

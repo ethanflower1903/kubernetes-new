@@ -376,3 +376,4 @@ memory-demo-2   0/1       OOMKilled   1          37s
 kubectl get pod memory-demo-2 --namespace=mem-example
 NAME            READY     STATUS    RESTARTS   AGE
 memory-demo-2   1/1       Running   2          40s
+# important 

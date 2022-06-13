@@ -393,3 +393,10 @@ Warning OOMKilling Memory cgroup out of memory: Kill process 4481 (stress) score
 Delete your Pod:
 
 kubectl delete pod memory-demo-2 --namespace=mem-example
+Specify a memory request that is too big for your Nodes
+Memory requests and limits are associated with Containers, but it is useful to think of a Pod as having a memory request and limit. The memory request for the Pod is the sum of the memory requests for all the Containers in the Pod. Likewise, the memory limit for the Pod is the sum of the limits of all the Containers in the Pod.
+
+Pod scheduling is based on requests. A Pod is scheduled to run on a Node only if the Node has enough available memory to satisfy the Pod's memory request.
+
+In this exercise, you create a Pod that has a memory request so big that it exceeds the capacity of any Node in your cluster. Here is the configuration file for a Pod that has one Container with a request for 1000 GiB of memory, which likely exceeds the capacity of any Node in your cluster.
+

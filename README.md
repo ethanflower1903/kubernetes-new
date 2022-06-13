@@ -377,3 +377,19 @@ kubectl get pod memory-demo-2 --namespace=mem-example
 NAME            READY     STATUS    RESTARTS   AGE
 memory-demo-2   1/1       Running   2          40s
 
+View detailed information about the Pod history:
+
+kubectl describe pod memory-demo-2 --namespace=mem-example
+The output shows that the Container starts and fails repeatedly:
+
+... Normal  Created   Created container with id 66a3a20aa7980e61be4922780bf9d24d1a1d8b7395c09861225b0eba1b1f8511
+... Warning BackOff   Back-off restarting failed container
+View detailed information about your cluster's Nodes:
+
+kubectl describe nodes
+The output includes a record of the Container being killed because of an out-of-memory condition:
+
+Warning OOMKilling Memory cgroup out of memory: Kill process 4481 (stress) score 1994 or sacrifice child
+Delete your Pod:
+
+kubectl delete pod memory-demo-2 --namespace=mem-example

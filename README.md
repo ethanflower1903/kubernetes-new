@@ -400,3 +400,19 @@ Pod scheduling is based on requests. A Pod is scheduled to run on a Node only if
 
 In this exercise, you create a Pod that has a memory request so big that it exceeds the capacity of any Node in your cluster. Here is the configuration file for a Pod that has one Container with a request for 1000 GiB of memory, which likely exceeds the capacity of any Node in your cluster.
 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: memory-demo-3
+  namespace: mem-example
+spec:
+  containers:
+  - name: memory-demo-3-ctr
+    image: polinux/stress
+    resources:
+      requests:
+        memory: "1000Gi"
+      limits:
+        memory: "1000Gi"
+    command: ["stress"]
+    args: ["--vm", "1", "--vm-bytes", "150M", "--vm-hang", "1"]

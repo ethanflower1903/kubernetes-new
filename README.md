@@ -416,3 +416,10 @@ spec:
         memory: "1000Gi"
     command: ["stress"]
     args: ["--vm", "1", "--vm-bytes", "150M", "--vm-hang", "1"]
+Create the Pod:
+
+kubectl apply -f https://k8s.io/examples/pods/resource/memory-request-limit-3.yaml --namespace=mem-example
+View the Pod status:
+
+kubectl get pod memory-demo-3 --namespace=mem-example
+    

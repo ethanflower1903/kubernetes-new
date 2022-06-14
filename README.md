@@ -423,3 +423,17 @@ View the Pod status:
 
 kubectl get pod memory-demo-3 --namespace=mem-example
     
+The output shows that the Pod status is PENDING. That is, the Pod is not scheduled to run on any Node, and it will remain in the PENDING state indefinitely:
+
+kubectl get pod memory-demo-3 --namespace=mem-example
+NAME            READY     STATUS    RESTARTS   AGE
+memory-demo-3   0/1       Pending   0          25s
+View detailed information about the Pod, including events:
+
+kubectl describe pod memory-demo-3 --namespace=mem-example
+The output shows that the Container cannot be scheduled because of insufficient memory on the Nodes:
+
+Events:
+  ...  Reason            Message
+       ------            -------
+  ...  FailedScheduling  No nodes are available that match all of the following predic

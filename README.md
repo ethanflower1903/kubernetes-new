@@ -437,3 +437,14 @@ Events:
   ...  Reason            Message
        ------            -------
   ...  FailedScheduling  No nodes are available that match all of the following predic
+Kubernetes 201: How to Deploy a Kubernetes Cluster
+
+In the last blog post, we discussed Kubenetes, what it is, how it interacts with containers, microservice architectures, and how Kubernetes solves a lot of the problems around container deployments.
+
+We'll tackle the components that form a Kubernetes cluster, different ways to deploy Kubernetes, then finally a lab time where we install our own single node cluster and deploy our first workload!
+
+Kubernetes Components
+
+The parts of a Kubernetes cluster is a quite large topic that could fill multiple articles. We're only going to cover the basics to present a framework on how a cluster works. This might seem like a bit of a dry subject, but it will illustrate the different features of Kubernetes clusters and you'll hopefully see how they solve problems inherent in traditional software deployments.
+
+This is a great opportunity to introduce the official Kubernetes documentation. Concerning any Kubernetes topic, the docs are a deep well of knowledge and should always be the first place you consult to learn more, the cluster components being a great example.

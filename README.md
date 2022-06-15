@@ -448,3 +448,19 @@ Kubernetes Components
 The parts of a Kubernetes cluster is a quite large topic that could fill multiple articles. We're only going to cover the basics to present a framework on how a cluster works. This might seem like a bit of a dry subject, but it will illustrate the different features of Kubernetes clusters and you'll hopefully see how they solve problems inherent in traditional software deployments.
 
 This is a great opportunity to introduce the official Kubernetes documentation. Concerning any Kubernetes topic, the docs are a deep well of knowledge and should always be the first place you consult to learn more, the cluster components being a great example.
+But first you need to know about kubectl, which is the Kubernetes command line tool used to run commands on your cluster. You'll use it to inspect different parts of your cluster, deploy and view running workloads, troubleshoot issues, and other tasks. We'll install kubectl a bit later, just know for now that it's the tool you'll use most to interact with Kubernetes.
+
+Every cluster has two main parts, the control plane and the worker nodes. The worker nodes run your containers via instructions based from the control plane. The nodes run your containers in Docker or another container engine as pods. Pods are the smallest unit of deployment in Kubernetes, usually made up of a single container with some exceptions.
+
+Control Plane Components
+
+The first main component of the control plane is the API server. It receives commands issued to the cluster and sends responses back out, much like any API. When you run a command with kubectl, it essentially talks to the API server and outputs the response to your terminal.
+
+Next is the scheduler. When you deploy a pod the scheduler figures out where would be best to run it, looking at the loads already running on each node and any specific scheduling rules in place to make a decision.
+
+The controller watches several elements of the state of the cluster to take action if the intended state isn't met. It monitors nodes and takes action to respond if a node goes offline. It handles maintaining a set number of replicas for pods. It directs internal networking so that a pod is reachable no matter what node it is on. The controller is basically the secret sauce that makes the Kubernetes multi-node clustering magic happen.
+
+Our last major control plane component is etcd. This is a key store that holds all the cluster data. Think of it as a database that stores all the configuration of everything running in your cluster.
+
+All of these control plane components are designed to be run with redundancy, typically with multiple virtual machines configured as control planes. Under the hood they are managing this redundancy with complicated logic loops and quorums, which are topics way outside of our scope for today but fascinating to dive into.
+

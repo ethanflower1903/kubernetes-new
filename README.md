@@ -463,4 +463,4 @@ The controller watches several elements of the state of the cluster to take acti
 Our last major control plane component is etcd. This is a key store that holds all the cluster data. Think of it as a database that stores all the configuration of everything running in your cluster.
 
 All of these control plane components are designed to be run with redundancy, typically with multiple virtual machines configured as control planes. Under the hood they are managing this redundancy with complicated logic loops and quorums, which are topics way outside of our scope for today but fascinating to dive into.
-
+# very important

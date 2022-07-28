@@ -463,4 +463,10 @@ The controller watches several elements of the state of the cluster to take acti
 Our last major control plane component is etcd. This is a key store that holds all the cluster data. Think of it as a database that stores all the configuration of everything running in your cluster.
 
 All of these control plane components are designed to be run with redundancy, typically with multiple virtual machines configured as control planes. Under the hood they are managing this redundancy with complicated logic loops and quorums, which are topics way outside of our scope for today but fascinating to dive into.
-# very important
+# very important==]
+
+So here we are basically discussing what is Kubernetes and Docker, what is the difference between them, how they work, and also discussing some points about Kubernetes vs Docker. Basically, these are not the same thing but the closely related. When you are working with Kubernetes you often be working with Docker.  
+
+What are Containers?
+Container package application software with their dependencies in order to abstract from the infrastructure it runs on. Now containers basically offer a logical packaging mechanism in which application can be abstracted from the environment in which they actually run. Now, this decoupling allows container-based applications to be deployed easily and consistently regardless the target environment is a private data center, the public cloud even a developer’s personal laptop.  
+

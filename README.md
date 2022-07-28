@@ -470,3 +470,11 @@ So here we are basically discussing what is Kubernetes and Docker, what is the d
 What are Containers?
 Container package application software with their dependencies in order to abstract from the infrastructure it runs on. Now containers basically offer a logical packaging mechanism in which application can be abstracted from the environment in which they actually run. Now, this decoupling allows container-based applications to be deployed easily and consistently regardless the target environment is a private data center, the public cloud even a developer’s personal laptop.  
 
+Key Feature of Kubernetes:
+It has a tremendous amount of features which are as follows.
+
+Runs everywhere: It is an open-source tool and gives you the freedom to take advantage of on-premises, Public & hybrid cloud infrastructure letting you move your workload to anywhere you want.
+Automation:  For instance, Kubernetes will control for you with servable host the container how it will be launched.
+Interaction: Kubernetes is able to manage more clusters at the same time. & It allows not only horizontal even vertical scaling also.
+Additional services: It provides additional features as well as the management of containers, Kubernetes offers security networking & storage services.
+self-monitoring: It also gives you a provision of self-monitoring as it constantly checks the health of nodes and the container itself.

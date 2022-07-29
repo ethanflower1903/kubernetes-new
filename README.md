@@ -478,3 +478,9 @@ Automation:  For instance, Kubernetes will control for you with servable host th
 Interaction: Kubernetes is able to manage more clusters at the same time. & It allows not only horizontal even vertical scaling also.
 Additional services: It provides additional features as well as the management of containers, Kubernetes offers security networking & storage services.
 self-monitoring: It also gives you a provision of self-monitoring as it constantly checks the health of nodes and the container itself.
+Key Feature of Docker:
+Easy configuration: This is one of the key features of Docker in which you can easily deploy your code in less time & effort as you can use Docker in a wide variety of environments. The requirement of the infrastructure is no longer linked with the environment of the application helping in configuring the system easier and faster.
+You can use swarm: It is a clustering and scheduling tool for Docker containers, SO swarm used the Docker API as a frontend which helps us to use various tools to the controller, it also helps us to control cluster for Docker host as a single virtual host, it is a self-organizing group of engines that is used to enable, pluggable backbends.
+Manages security: Docker allows us to save secrets in the swarm itself. And then choose to give services access to certain secrets. It includes some important commands to the engine like secret inspection, secretly creating, etc.
+Services: Service is a list of tasks that lets us specify the state of a container inside of a cluster. Each task represents one instance of a container that should be running and swan schedules them across the nodes.
+More Productivity: By easing technical configuration & rapid deployment of applications no doubt it has increased productivity, Docker not only helps to execute the application in an isolated environment but it also reduces the resources also.

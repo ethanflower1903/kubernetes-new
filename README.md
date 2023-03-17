@@ -1,4 +1,4 @@
-# kubernetes-new commands ...//
+# kubernetes-new commands .../////
 What is Kubernetes??..
 Kubernetes is a portable, extensible, open source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation. It has a large, rapidly growing ecosystem. Kubernetes services, support, and tools are widely available...
 
@@ -205,7 +205,7 @@ annotate: Add or remove an annotation from an object.
 label: Add or remove a label from an object.
 The kubectl command also supports update commands driven by an aspect of the object. Setting this aspect may set different fields for different object types:
 
-set <field>: Set an aspect of an object.
+set <field>: Set an aspect of an object...
 Note: In Kubernetes version 1.5, not every verb-driven command has an associated aspect-driven command.
 The kubectl tool supports these additional ways to update a live object directly, however they require a better understanding of the Kubernetes object schema.
 

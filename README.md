@@ -488,4 +488,4 @@ Pros of Docker:
 Build app only once: An application inside a container can run on a system that has Docker installed. So there is no need to build and configure apps multiple times on different platforms.
 More sleep and less worry: With Docker, you test your application inside a container and ship it inside a container. This means the environment in which you test is identical to the one on which the app will run in production
 Portability: Docker containers can run on any platform. It can run on any local system, Amazon ec2, Google cloud, Virtual box, etc.
-Version control: Like git, Docker has a built version control system. Docker containers work just like GIT repositories, allowing you to commit changes to your Docker images and version control them.
+Version control: Like git, Docker has a built version control system. Docker containers work just like GIT repositories, allowing you to commit changes to your Docker images and version control them.//

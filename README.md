@@ -6,7 +6,7 @@ A Kubernetes cluster consists of the components that represent the control plane
 The Kubernetes API////
 The Kubernetes API lets you query and manipulate the state of objects in ...Kubernetes. The core of Kubernetes' control plane is the API server and the HTTP API that it exposes. Users, the different parts of your cluster, and external components all communicate with one another through the API server.
 
-Working with Kubernetes Object....///
+Working with Kubernetes Object..
 Kubernetes objects are persistent entities in the Kubernetes system. Kubernetes uses these entities to represent the state of your cluster. Learn about the Kubernetes object model and how to work with these objects.
 Understanding Kubernetes Objects
 This page explains how Kubernetes objects are represented in the Kubernetes API, and how you can express them in .yaml format.

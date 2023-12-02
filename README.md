@@ -94,7 +94,7 @@ Run an instance of the nginx container by creating a Deployment object:
 
 kubectl create deployment nginx --image nginx
 Trade-offs
-Advantages compared to object configuration:
+Advantages compared to object configuration:////
 
 Commands are expressed as a single action word.
 Commands require only a single step to make changes to the cluster.

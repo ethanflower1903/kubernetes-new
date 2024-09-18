@@ -11,7 +11,7 @@ Kubernetes objects are persistent entities in the Kubernetes system. Kubernetes 
 Understanding Kubernetes Objects
 This page explains how Kubernetes objects are represented in the Kubernetes API, and how you can express them in .yaml format./
 Understanding Kubernetes objects////////
-Kubernetes objects are persistent entities in the Kubernetes system. Kubernetes uses these entities to represent the state of your cluster. Specifically, they can describe:///
+Kubernetes objects are persistent entities in the Kubernetes system. Kubernetes uses these entities to represent the state of your cluster. Specifically, they can describe:/
 
 What containerized applications are running (and on which nodes)
 The resources available to those application.////::

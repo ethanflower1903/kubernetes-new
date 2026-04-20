@@ -165,7 +165,7 @@ Managing Kubernetes Objects Using Imperative Commands
 Kubernetes objects can quickly be created, updated, and deleted directly using imperative commands built into the kubectl command-line tool. This document explains how those commands are organized and how to use them to manage live objects.
 
 Before you begin
-Install kubectl.
+Install kubectl./
 
 You need to have a Kubernetes cluster, and the kubectl command-line tool must be configured to communicate with your cluster. It is recommended to run this tutorial on a cluster with at least two nodes that are not acting as control plane hosts. If you do not already have a cluster, you can create one by using minikube or you can use one of these Kubernetes playgrounds:
 Trade-offs

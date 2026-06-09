@@ -145,7 +145,7 @@ Note: Declarative object configuration retains changes made by other writers, ev
 Examples
 Process all object configuration files in the configs directory, and create or patch the live objects. You can first diff to see what changes are going to be made, and then apply:
 
-kubectl diff -f configs/
+kubectl diff -f configs//
 kubectl apply -f configs/
 Recursively process directories:
 

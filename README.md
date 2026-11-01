@@ -68,7 +68,7 @@ apiVersion - Which version of the Kubernetes API you're using to create this obj
 kind - What kind of object you want to create
 metadata - Data that helps uniquely identify the object, including a name string, UID, and optional namespace
 spec - What state you desire for the object
-The precise format of the object spec is different for every Kubernetes object, and contains nested fields specific to that object. The Kubernetes API Reference can help you find the spec format for all of the objects you can create using Kubernetes.//
+The precise format of the object spec is different for every Kubernetes object, and contains nested fields specific to that object. The Kubernetes API Reference can help you find the spec format for all of the objects you can create using Kubernetes./..
 
 For example, see the spec field for the Pod API reference. For each Pod, the .spec field specifies the pod and its desired state (such as the container image name for each container within that pod). Another example of an object specification is the spec field for the StatefulSet API. For StatefulSet, the .spec field specifies the StatefulSet and its desired state. Within the .spec of a StatefulSet is a template for Pod objects. That template describes Pods that the StatefulSet controller will create in order to satisfy the StatefulSet specification. Different kinds of object can also have different .status; again, the API reference pages detail the structure of that .status field, and its content for each different type of object.
 
@@ -486,3 +486,6 @@ Build app only once: An application inside a container can run on a system that 
 More sleep and less worry: With Docker, you test your application inside a container and ship it inside a container. This means the environment in which you test is identical to the one on which the app will run in production
 Portability: Docker containers can run on any platform. It can run on any local system, Amazon ec2, Google cloud, Virtual box, etc.
 Version control: Like git, Docker has a built version control system. Docker containers work just like GIT repositories, allowing you to commit changes to your Docker images and version control them.//
+
+Never outgrow
+Whether testing locally or running a global enterprise, Kubernetes flexibility grows with you to deliver your applications consistently and easily no matter how complex your need is.
